@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  </head>
+  <body>
+
+   <a-scene>
+     <!-- Asset Management System -->
+     <a-assets>
+       <img id="metal-normal" src="https://cdn.glitch.global/dd525465-70b9-4d1f-ad1c-9d281622d607/TexturesCom_Metal_Corrugated_1K_albedo.jpg?v=1682172076223">
+       <img id="brick_texture" src="https://cdn.glitch.global/dd525465-70b9-4d1f-ad1c-9d281622d607/TexturesCom_Wall_BrickPlain3_2.5x2.5_B_1K_albedo.jpg?v=1682174855542">
+       <!-- Normal maps-->
+       <img id="brick_texture_normal" src="https://cdn.glitch.global/dd525465-70b9-4d1f-ad1c-9d281622d607/TexturesCom_Wall_BrickPlain3_2.5x2.5_B_1K_normal.jpg?v=1682179302249">
+
+     </a-assets>
+     <!-- Light-Blue Box-->
+     <a-box 
+            color="#FFFFFF"
+            src="https://cdn.glitch.global/dd525465-70b9-4d1f-ad1c-9d281622d607/TexturesCom_Metal_Corrugated_1K_albedo.jpg?v=1682172076223"
+            width="4"
+            height="4"
+            depth="4"
+            position="-2 1.5 -9"
+            repeat="1 2"
+            roughness="0"
+            scale = "1 1 1"
+            >
+     </a-box>
+     <!-- Brown Box-->
+     <a-box 
+            material="
+                      color:#795548;
+                      src: #brick_texture;
+                      repeat: 2 2
+                      normal-scale: 1 -1;
+                      roughness: 0.9;
+                      normal-map: #brick_texture_normal;
+                      "
+            width="4"
+            height="4"
+            depth="4"
+            position="2 1.5 -9"
+            scale="1 1 1"
+            >
+     </a-box>
+     <!-- Blue sphere-->
+     <a-sphere material="color: blue;
+                         roughness: 0.1;
+                         shader: standard;
+                         opacity: 0.5"
+               radius="0.5"
+               position="-2 1.5 -9">
+     </a-sphere>
+     <!-- Red sphere-->
+      <a-sphere material="color: #FF0000;
+                         roughness: 0.1;
+                         shader: flat;
+                         opacity: 0.5"
+               radius="0.5"
+               position="2 1.5 -9">
+      </a-sphere>    
+   </a-scene>
+</body>
+</html>

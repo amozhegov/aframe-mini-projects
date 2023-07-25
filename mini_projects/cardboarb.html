@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Green wall -->
+      <a-box id="parent" color="#689F38" width="4" height="2" depth="0.2" position="0 1 0" rotation="90 0 0">
+        <!-- Gray circle -->
+        <a-circle position="2 0 0" color="#333333" side="double" rotation="90 0 0">
+        </a-circle>
+        <!-- Yellow circle -->
+        <a-circle position="-2 0 0" color="#FFC107" side="double" rotation="90 0 0" scale = "2 2 2">
+        </a-circle>
+        <!-- Gray cylinder-->
+        <a-cylinder color="#616161" radius="3.5" height="2" segments-radial="6" rotation = "0 90 0" position="0 1 0" scale="2 1 1"  open-ended="true" side="double"></a-cylinder>
+      </a-box>
+
+      <!-- Camera position -->
+      <a-camera position="10 3 15"></a-camera>
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
+

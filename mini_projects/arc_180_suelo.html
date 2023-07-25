@@ -1,0 +1,97 @@
+<html>
+<head>
+   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+   <a-scene>
+     <a-assets>
+       <img id="girasol" src="https://cdn.glitch.global/556f5a01-5021-478e-af73-c0f4b9a4cd76/sunflowers2.jpeg?v=1682197400235">
+       <img id="viburnum" src="https://cdn.glitch.global/556f5a01-5021-478e-af73-c0f4b9a4cd76/viburnum2.jpeg?v=1682198384339">
+       <img id="suelo" src="https://cdn.glitch.global/556f5a01-5021-478e-af73-c0f4b9a4cd76/TexturesCom_CrackedPavementA_1K_albedo.jpg?v=1682198983712">
+       <img id="suelo_normal" src="https://cdn.glitch.global/556f5a01-5021-478e-af73-c0f4b9a4cd76/TexturesCom_CrackedPavementA_1K_normal.jpg?v=1682199006236">
+       <img id="sky" src="https://cdn.glitch.global/556f5a01-5021-478e-af73-c0f4b9a4cd76/sunny-sky_2048x1365.jpg?v=1682199719099">
+       <img id="cordoba" src="https://cdn.glitch.global/556f5a01-5021-478e-af73-c0f4b9a4cd76/StreetView360.jpg?v=1682200224697">
+     </a-assets>
+     <!-- Image -->
+     <!-- width=1024 height= 768-->
+     <a-image src="#girasol"
+              position="0 1.5 -3"
+              width="1"
+              height="0.75"
+              scale="3 3 1">
+     
+     </a-image>
+     <a-curvedimage  
+              src="#girasol"
+              theta-length="90"
+              theta-start="135"
+              radius="0.707"
+              position="0 1.5 0"
+              height="0.833"
+              scale="3 3 3">
+     </a-curvedimage>
+     <!--
+     <a-box color="#AA0000"
+            opacity="0.5"
+            width="3"
+            height="0.1"
+            depth="3"
+            position="0 1.5 -1.5">
+     
+     </a-box>
+     -->
+     <!-- 3-image scene -->
+     <a-curvedimage src="#viburnum"
+                    theta-length="50"
+                    theta-start="90"
+                    radius="0.5"
+                    height="0.327"
+                    position="0 1.5 0"
+                    scale="3 3 3">
+     </a-curvedimage>
+     
+    <a-curvedimage src="#viburnum"
+                    theta-length="50"
+                    theta-start="155"
+                    radius="0.5"
+                    height="0.327"
+                    position="0 1.5 0"
+                    scale="3 3 3">
+     </a-curvedimage>
+     
+    <a-curvedimage src="#viburnum"
+                    theta-length="50"
+                    theta-start="220"
+                    radius="0.5"
+                    height="0.327"
+                    position="0 1.5 0"
+                    scale="3 3 3">
+      </a-curvedimage>
+     
+     <!-- Suelo -->
+     <a-plane
+              material="
+                        color:#FFFFFF;
+                        src: #suelo;
+                        repeat: 5 5;
+                        normal-map: #suelo_normal;
+                        normal-texture-repeat: 5 5"
+              rotation="-90 0 0"
+              scale="10 10 1"
+              roughness="0.2"
+              >
+     
+     </a-plane>
+     <a-sky material="
+                      src: #sky;
+                      normal-texture-repeat: 5000 5000;"
+            scale="10000 10000 1"
+            repeat="5000 5000"
+            rotation="0 0 0"
+            >
+     
+     </a-sky>
+     
+   </a-scene>
+</body>
+</html>
