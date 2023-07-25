@@ -1,0 +1,130 @@
+<html>
+<head>
+    <title>Clases 4, 5, 6</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+        <img id="sky" src="sky_ground/sky.jpeg">
+        <img id="floor" src="sky_ground/TexturesCom_Pavement_CobblestoneOld_1K_albedo.jpg">
+        <a-asset-item id="village" src="castle_village_scene/scene.gltf"></a-asset-item>
+        <a-asset-item id="tower" src="kickelhahn_tower/scene.gltf"></a-asset-item>
+        <a-asset-item id="plough" src="plough/scene.gltf"></a-asset-item>
+        <!-- new entities -->
+
+      </a-assets>
+      <!-- Ambient Light 
+      <a-entity light="type: ambient;
+                       color: #BBB">
+      </a-entity>-->
+      <!-- Directional light 
+      <a-entity light="type: directional;
+                       color: #FFFFFF;
+                       intensity: 0.6;
+                       castShadow: true;"
+                position="-0.5 1 1">
+      </a-entity>-->
+      <!-- Ambient Light -->
+      <a-entity light="type: ambient;
+                       intensity: 0.2;">
+      </a-entity>
+      <!-- Point Light -->
+      <a-entity light="type: point;
+                       intensity: 1;
+                       distance: 10;
+                       castShadow: true"
+                position="-4 4 1.5">
+      </a-entity>
+      
+      <!-- GLTF models light -->
+      <a-entity light="type: point;
+                       intensity: 1;
+                       distance: 10;
+                       castShadow: true"
+                position="2 2 2.5">      
+      </a-entity>
+      
+      <!-- Spotlight -->
+      <a-entity light="type: spot;
+                       target: #green-box;
+                       color: #C40070;
+                       angle: 40;
+                       penumbra: 0.1;
+                       castShadow: true"
+                position="0 3 1">
+      </a-entity> 
+
+
+      <!-- Sky -->
+      <a-sky src="#sky"></a-sky>
+      <!-- Ground -->
+      <a-plane material="color: #FFFFFF;
+                         src: #floor;
+                         repeat: 5 5"
+               shadow="receive: true"
+               position="0 -0.0001 0"
+               rotation="-90 0 0"
+               scale="10 10 1"></a-plane>
+      
+      <a-entity position="0 -0.5 2.5">
+        <a-camera></a-camera>
+      </a-entity>
+
+    
+    <a-entity gltf-model="#village" shadow="cast: true"></a-entity>
+    <a-entity gltf-model="#tower" scale="0.03 0.03 0.03" position="1 0 0" color="#FFFFFF" shadow="cast: true"></a-entity>
+    <a-entity gltf-model="#plough" scale="0.3 0.3 0.3" position="1 0.02 1" shadow="cast: true"></a-entity>
+    
+    <!-- Silver box-->
+    <a-box color="silver"
+           animation="property: position; from: 1 1 -10; to: 1 8 -10; dur: 3000; easing: linear; dir: alternate; loop: true"
+           animation__material="property: material.color; from: #c0c0c0; to: #ffffff; dur: 5000; repeat: indefinite; direction: alternate; loop: true">
+    </a-box>
+      
+    <!-- Yellow sphere -->
+    <a-entity rotation="0 0 0" 
+              animation__rotation="property: rotation; to: 0 360 0; loop: true; dur: 30000">
+        <a-sphere position="5 1.5 0" color="#FFFF00" shadow="cast: true"></a-sphere>
+    </a-entity>
+      
+    <!-- Green box -->
+    <a-box id="green-box"
+           color="green"
+           position="0 0.5 0"
+           shadow="cast: true"
+           animation__position="property: position; from: -3 2.5 -2; to: -3 1.5 2; dur: 30000; easing: linear; dir: alternate; loop: true"
+           animation__material="property: material.opacity; from: 1; to: 0; dur: 5000; repeat: indefinite; direction: alternate; loop: true">
+    </a-box>
+    <!-- White sphere -->
+    <a-sphere color="white"
+           position="0 0.5 0"
+           animation__position="property: position; from: 4 0 -4; to: -4 0 -4; dur: 30000; easing: linear; dir: alternate; loop: true"
+           animation__material="property: material.color; from: #ffffff; to: #000000; dur: 5000; repeat: indefinite; direction: alternate; loop: true">
+    </a-sphere>
+    
+    <!-- Red elastic box -->
+    <a-box color="red"
+           position="2 0.5 0"
+           shadow="cast: true"
+           animation__scale="property: scale; to: 0.2 1 5; dur: 5000; easing: linear; repeat: indefinite; loop: true"
+           animation__material="property: material.opacity; from: 1; to: 0; dur: 5000; repeat: indefinite; direction: alternate; loop: true">
+    </a-box>
+    <!-- Blue-purple-red sphere -->
+    <a-sphere color="purple"
+              radius="0.5"
+              position="0 2.25 0"
+              animation__scale="property: scale; to: 0 2.5 0; dur: 500; easing: linear; repeat: indefinite; loop: true"
+              animation="property: material.color; from: #0000FF; to: #ff0000; dur: 5000; repeat: indefinite; direction: alternate; loop: true">
+    </a-sphere>
+    <!-- Yellow cone -->
+    <a-cone color="yellow"
+            position="-2 0 0"
+            animation="property: material.opacity; from: 1; to: 0; dur: 5000; repeat: indefinite; direction: alternate; loop: true">
+      
+    </a-cone>
+
+
+  </a-scene>
+</body>
+</html>
